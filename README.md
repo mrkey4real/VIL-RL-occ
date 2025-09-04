@@ -1,19 +1,21 @@
+# VIL-RL-occ
+
 This repository is a idea using VIL to generate fast occupant behavior and fusion with meter & thermostat data to do RL, the purpose of this research is to further eliminate building model and make my LLM-occ scalable for everyone.
 
-Current Status
+# Current Status
 VIL-RL-occ: Video QA with Qwen2-VL (OpenVINO, CPU)
 
 This project performs video Q&A/description on CPU using OpenVINO-accelerated Qwen2-VL-2B INT4. It uniformly samples frames per time segment and runs multiple questions per segment.
 
 Repository: https://github.com/mrkey4real/VIL-RL-occ
 
-Features
+## Features
 - CPU-only inference with OpenVINO IR models (Qwen2-VL-2B INT4)
 - Uniform, segment-based frame sampling (configurable segment length and frames per segment)
 - Simple one-file runner (vil.py) with English-only comments
 - Conservative defaults for speed and memory on CPU
 
-Requirements
+## Requirements
 Install via pip (CPU wheels):
 
 pip install -q "transformers>=4.45" "torch>=2.1" "torchvision" "qwen-vl-utils" "Pillow"
@@ -23,13 +25,13 @@ pip install -q decord
 
 Note (Windows): Torch CPU wheels install automatically from PyPI. If you see a message that torchvision video decoding is deprecated, that's fine (we read frames via OpenCV).
 
-How it works
+## How it works
 - On first run, vil.py downloads a ready-to-use OpenVINO bundle (IR + helpers) to:
   - %USERPROFILE%/ov_qwen2vl_cpu_demo/qwen2vl_ov_2b_int4
 - The script imports the OpenVINO model class from that bundle and runs generation with Transformers.
 - Video is read once. We split the timeline into fixed-length segments and uniformly sample up to N frames per segment (saved as JPEGs). We then run QA per segment.
 
-Usage
+## Usage
 1) Place a video under video/ (we intentionally ignore large video files in git).
 2) Edit the top of vil.py:
    - VIDEO_PATH: path to your local video (e.g. ./video/xxx.avi)
