@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+This repository is a idea using VIL to generate fast occupant behavior and fusion with meter & thermostat data to do RL, the purpose of this research is to further eliminate building model and make my LLM-occ scalable for everyone.
+
+Current Status
 VIL-RL-occ: Video QA with Qwen2-VL (OpenVINO, CPU)
 
 This project performs video Q&A/description on CPU using OpenVINO-accelerated Qwen2-VL-2B INT4. It uniformly samples frames per time segment and runs multiple questions per segment.
