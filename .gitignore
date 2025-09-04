@@ -1,0 +1,27 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local datasets / artifacts
+video/
+*.avi
+*.mp4
+*.mkv
+*.mov
+
+# Generated frames
+**/frames/**
+
+# Editor settings
+.vscode/
+.idea/
+
